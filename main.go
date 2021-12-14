@@ -12,8 +12,6 @@ import (
 func pingHandler(ginCtx *gin.Context, dao *dao.Models) {
 	threads, _ := dao.ThreadStore.Threads()
 
-	fmt.Printf("%v\n", threads)
-
 	ginCtx.JSON(200, gin.H{
 		"status":  "SUCCESS",
 		"message": "SUCCESS",
