@@ -9,7 +9,7 @@ import (
 	"github.com/prinarjayaoka/my-go-rest-api/models"
 )
 
-func pingHandler(ginCtx *gin.Context, dao *dao.Models) {
+func pingHandler(ginCtx *gin.Context, dao *dao.DAO) {
 	threads, _ := dao.ThreadStore.Threads()
 
 	ginCtx.JSON(200, gin.H{
@@ -19,7 +19,7 @@ func pingHandler(ginCtx *gin.Context, dao *dao.Models) {
 	})
 }
 
-func createDataHandler(ginCtx *gin.Context, dao *dao.Models) {
+func createDataHandler(ginCtx *gin.Context, dao *dao.DAO) {
 	var t models.Thread
 
 	errJson := ginCtx.ShouldBindJSON(&t)

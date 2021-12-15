@@ -18,7 +18,7 @@ func NewThreadStore(db *sqlx.DB) *ThreadStore {
 
 func (s *ThreadStore) Thread(id string) (models.Thread, error) {
 	var t models.Thread
-	err := s.Get(&t, `SELECT * FROM threads WHERE id = $1`, id)
+	err := s.Get(&t, `SELECT * FROM threads WHERE id = ?`, id)
 
 	if err != nil {
 		return models.Thread{}, fmt.Errorf("error retrieving thread: %w", err)
