@@ -20,8 +20,11 @@ func main() {
 	dao, _ := dao.NewStore(dsnString)
 	server := gin.Default()
 
-	routes.PropertyReadRoutes(server, dao)
-	routes.PropertyCreateRoutes(server, dao)
+	rgV1 := server.Group("/v1")
+	{
+		routes.PropertyReadRoutes(rgV1, dao)
+		routes.PropertyCreateRoutes(rgV1, dao)
+	}
 
 	server.Run()
 }

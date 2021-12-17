@@ -6,9 +6,9 @@ import (
 	"github.com/prinarjayaoka/my-go-rest-api/dao"
 )
 
-func PropertyCreateRoutes(ging *gin.Engine, dao *dao.DAO) {
+func PropertyCreateRoutes(rg *gin.RouterGroup, dao *dao.DAO) {
 
-	ging.POST("/create", func(c *gin.Context) {
+	rg.POST("/create", func(c *gin.Context) {
 		handlers.CreateDataHandler(c, dao)
 	})
 }

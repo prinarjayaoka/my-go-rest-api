@@ -6,9 +6,9 @@ import (
 	"github.com/prinarjayaoka/my-go-rest-api/dao"
 )
 
-func PropertyReadRoutes(ging *gin.Engine, dao *dao.DAO) {
+func PropertyReadRoutes(rg *gin.RouterGroup, dao *dao.DAO) {
 
-	ging.GET("/ping", func(c *gin.Context) {
+	rg.GET("/ping", func(c *gin.Context) {
 		handlers.PingHandler(c, dao)
 	})
 }
