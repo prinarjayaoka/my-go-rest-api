@@ -2,7 +2,8 @@ CREATE TABLE threads
 (
   id  varchar(64) not null primary key,
   title varchar(512)  not null,
-  `description` varchar(2048) null
+  `description` varchar(2048) null,
+  is_active int default 0 null
 );
 
 CREATE TABLE posts

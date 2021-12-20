@@ -3,7 +3,8 @@ package models
 type Thread struct {
 	ID          string `json:"id"`
 	Title       string `json:"title"`
-	Description string `json:"description"`
+	Description string `db:"description" json:"description"`
+	IsActive    int    `db:"is_active" json:"isActive"`
 }
 
 type ThreadStore interface {
